@@ -1,3 +1,4 @@
+//Birb
 import java.util.*;
 
 public class primAlgo3 {
@@ -79,11 +80,11 @@ public class primAlgo3 {
 
     static int[][] makeGraphManually() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the number of vertices: ");
+        System.out.print("Enter the number of vertices (like how many vertices are there): ");
         int numVertices = scanner.nextInt();
         int[][] adjacencyMatrix = new int[numVertices][numVertices];
         
-        System.out.println("Enter the adjacency matrix (0 for no connection):");
+        System.out.println("Enter the adjacency matrix (is no edge connected):");
         for (int i = 0; i < numVertices; i++) {
             for (int j = 0; j < numVertices; j++) {
                 System.out.printf("input at [%d][%d] " , i,j);
