@@ -1,7 +1,7 @@
 //Birb
 import java.util.*;
 
-public class primAlgo3 {
+public class PrimAlgo3 {
     static class Edge implements Comparable<Edge> {
         int cost;
         char n1;
@@ -69,7 +69,7 @@ public class primAlgo3 {
     }
 
     public static void main(String[] args) {
-        int[][] adjacencyMatrix = makeGraphManually();
+        int[][] adjacencyMatrix = makeGraph();
         List<Edge> minimumSpanningTree = prims(adjacencyMatrix, 'A');
 
         System.out.println("Minimum spanning tree: ");
@@ -78,28 +78,16 @@ public class primAlgo3 {
         }
     }
 
-    static int[][] makeGraphManually() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the number of vertices (like how many vertices are there): ");
-        int numVertices = scanner.nextInt();
-        int[][] adjacencyMatrix = new int[numVertices][numVertices];
-        
-        System.out.println("Enter the adjacency matrix (is no edge connected):");
-        for (int i = 0; i < numVertices; i++) {
-            for (int j = 0; j < numVertices; j++) {
-                System.out.printf("input at [%d][%d] " , i,j);
-                adjacencyMatrix[i][j] = scanner.nextInt();
-            }
-            // Print the current state of the matrix after each row
-            for (int[] row : adjacencyMatrix) {
-                for (int element : row) {
-                    System.out.print(element + " ");
-                }
-                System.out.println();
-            }
-            System.out.println();
-        }
-        scanner.close();
+    static int[][] makeGraph() {
+        int[][] adjacencyMatrix = {
+                {0, 3, 3, 0, 0, 0, 0},
+                {2, 0, 4, 0, 3, 0, 0},
+                {3, 0, 0, 5, 1, 6, 0},
+                {3, 0, 5, 0, 0, 0, 7},
+                {0, 2, 0, 1, 0, 8, 0},
+                {0, 0, 6, 0, 8, 0, 9},
+                {0, 0, 0, 0, 0, 7, 0}
+        };
         return adjacencyMatrix;
     }
 }
